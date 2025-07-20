@@ -75,3 +75,183 @@
   </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OB Hydraulic Solutions</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f8f8; }
+    header { background: #111; color: #fff; padding: 1rem; text-align: center; }
+    nav { background: #fcb900; padding: 1rem; text-align: center; }
+    nav a { margin: 0 15px; color: #000; text-decoration: none; font-weight: bold; }
+    section { padding: 2rem; background: #fff; margin: 1rem; border-radius: 8px; }
+    footer { background: #111; color: #fff; text-align: center; padding: 1rem; }
+    img.logo { width: 120px; margin-bottom: 10px; }
+    .services ul { columns: 2; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="OB Hydraulic Solutions Logo" class="logo">
+    <h1>OB Hydraulic Solutions</h1>
+    <p><em>"We Bring Power Back to Your Machines!"</em></p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Clients</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>OB Hydraulic Solutions is a trusted provider of hydraulic repair services, parts, and support for major heavy equipment brands. With a service reach across NCR and Luzon, we bring fast and reliable service to your job site or garage.</p>
+    <p><strong>Owner:</strong> Orestes B. Baraquiel<br>Email: orestesbaraquiel27@gmail.com<br>Mobile: 0992 946 9225 / 0927 467 0727</p>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Supplies Parts</li>
+      <li>Hydraulic Repairs</li>
+      <li>Fast Response</li>
+      <li>Reliable Service</li>
+      <li>Preventive Maintenance</li>
+      <li>Chief Mechanic Support</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Brands We Support</h2>
+    <p>We provide services and parts for equipment from:</p>
+    <p>Caterpillar, Hyundai, Komatsu, Hitachi, JCB, John Deere, Volvo, Sandvik, XCMG, SANY, and more.</p>
+    <img src="equipment-banner.png" alt="Supported Equipment" style="width: 100%; max-width: 800px;">
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Las Piñas City (NCR & Luzon-wide)</p>
+    <p>☎️ 09929469225 / 09274670727</p>
+    <p>📧 orestesbaraquiel27@gmail.com</p>
+    <p><a href="https://facebook.com" target="_blank">Visit our Facebook Page</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 OB Hydraulic Solutions. All rights reserved.
+
+ <section id="contact-form">
+    <h2>Send us a Message</h2>
+    <form action="https://formsubmit.co/orestesbaraquiel27@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <input type="email" name="email" placeholder="Your Email" required><br><br>
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea><br><br>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <section id="booking">
+    <h2>Service Booking</h2>
+    <form id="bookingForm">
+      <input type="text" id="bname" placeholder="Your Name" required><br><br>
+      <input type="text" id="bcontact" placeholder="Contact Number" required><br><br>
+      <input type="date" id="bdate" required><br><br>
+      <select id="bservice">
+        <option value="Hydraulic Repair">Hydraulic Repair</option>
+        <option value="Preventive Maintenance">Preventive Maintenance</option>
+        <option value="Parts Request">Parts Request</option>
+      </select><br><br>
+      <textarea id="bnotes" placeholder="Additional Notes"></textarea><br><br>
+      <button type="button" onclick="submitBooking()">Submit Booking</button>
+    </form>
+    <p id="bookMsg" style="color: green;"></p>
+  </section>
+
+  <div id="fb-root"></div>
+  <div id="fb-customer-chat" class="fb-customerchat"></div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "YOUR_PAGE_ID_HERE");
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({ xfbml: true, version: 'v18.0' });
+    };
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <script>
+    function submitBooking() {
+      const name = document.getElementById('bname').value;
+      const contact = document.getElementById('bcontact').value;
+      const date = document.getElementById('bdate').value;
+      const service = document.getElementById('bservice').value;
+      const notes = document.getElementById('bnotes').value;
+
+      if (name && contact && date && service) {
+        document.getElementById('bookMsg').innerText = "Thank you " + name + ", your booking has been received!";
+        document.getElementById('bookingForm').reset();
+      } else {
+        document.getElementById('bookMsg').innerText = "Please fill all required fields.";
+      }
+    }
+  </script>
+</footer>
+
+  <div id="chatbot-container">
+    <div id="chat-button">💬 Chat</div>
+    <div id="chat-window">
+      <div id="chat-header">OBH Chatbot</div>
+      <div id="chat-log">
+        <div class="bot-msg">Hi! How can we help you today?</div>
+        <button onclick="reply('What services do you offer?')">What services do you offer?</button>
+        <button onclick="reply('Where are you located?')">Where are you located?</button>
+        <button onclick="reply('How do I request a repair?')">How do I request a repair?</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chatButton = document.getElementById("chat-button");
+    const chatWindow = document.getElementById("chat-window");
+    const chatLog = document.getElementById("chat-log");
+
+    chatButton.addEventListener("click", () => {
+      chatWindow.style.display = chatWindow.style.display === "none" ? "block" : "none";
+    });
+
+    function reply(question) {
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-msg";
+      userMsg.innerText = question;
+      chatLog.appendChild(userMsg);
+
+      const botMsg = document.createElement("div");
+      botMsg.className = "bot-msg";
+
+      if (question === "What services do you offer?") {
+        botMsg.innerText = "We offer parts supply, hydraulic repairs, preventive maintenance, and chief mechanic support.";
+      } else if (question === "Where are you located?") {
+        botMsg.innerText = "We’re based in Las Piñas City and operate NCR & Luzon-wide.";
+      } else if (question === "How do I request a repair?") {
+        botMsg.innerText = "You can call/text 09929469225 or email orestesbaraquiel27@gmail.com to request a repair.";
+      } else {
+        botMsg.innerText = "Sorry, I don’t have an answer for that yet.";
+      }
+
+      chatLog.appendChild(botMsg);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+  </script>
+</body>
+</html>
